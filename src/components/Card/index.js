@@ -18,16 +18,28 @@ const Card = ({
   tools,
   setTagElt,
   tagElt,
+  newData,
+  setNewData,
 }) => {
   const languagesSort = languages.sort();
   const allLanguages = languagesSort.map((elt) => (
-    <Tag text={elt} setTagElt={setTagElt} oneTag={tagElt} />
+    <Tag
+      text={elt}
+      setTagElt={setTagElt}
+      oneTag={tagElt}
+      newData={newData}
+      setNewData={setNewData}
+    />
   ));
-
   const toolsSort = tools.sort();
-
   const allTools = toolsSort.map((elt) => (
-    <Tag text={elt} />
+    <Tag
+      text={elt}
+      setTagElt={setTagElt}
+      oneTag={tagElt}
+      newData={newData}
+      setNewData={setNewData}
+    />
   ));
 
   return (
@@ -50,8 +62,20 @@ const Card = ({
         </ul>
       </div>
       <div className="card__tag">
-        <Tag text={role} setTagElt={setTagElt} oneTag={tagElt} />
-        <Tag text={level} setTagElt={setTagElt} oneTag={tagElt} />
+        <Tag
+          text={role}
+          setTagElt={setTagElt}
+          oneTag={tagElt}
+          newData={newData}
+          setNewData={setNewData}
+        />
+        <Tag
+          text={level}
+          setTagElt={setTagElt}
+          oneTag={tagElt}
+          newData={newData}
+          setNewData={setNewData}
+        />
         {allLanguages}
         {allTools}
       </div>

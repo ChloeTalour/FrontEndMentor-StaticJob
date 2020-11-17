@@ -11,7 +11,11 @@ import SeeTagElement from '../SeeTagElement';
 // == Composant
 const App = () => {
   const [tagElt, setTagElt] = useState([]);
-  const allData = data.map((elt) => (
+  const [newData, setNewData] = useState(data);
+
+  console.log(newData);
+
+  const allData = newData.map((elt) => (
     <Card
       key={elt.id}
       company={elt.company}
@@ -28,6 +32,8 @@ const App = () => {
       tools={elt.tools}
       setTagElt={setTagElt}
       tagElt={tagElt}
+      newData={newData}
+      setNewData={setNewData}
     />
   ));
 
