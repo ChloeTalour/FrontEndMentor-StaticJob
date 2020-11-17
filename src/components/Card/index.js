@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Tag from './tag';
+import Tag from '../Tag';
 import './styles.scss';
 
 const Card = ({
@@ -16,10 +16,12 @@ const Card = ({
   level,
   languages,
   tools,
+  setTagElt,
+  tagElt,
 }) => {
   const languagesSort = languages.sort();
   const allLanguages = languagesSort.map((elt) => (
-    <Tag text={elt} />
+    <Tag text={elt} setTagElt={setTagElt} oneTag={tagElt} />
   ));
 
   const toolsSort = tools.sort();
@@ -48,8 +50,8 @@ const Card = ({
         </ul>
       </div>
       <div className="card__tag">
-        <Tag text={role} />
-        <Tag text={level} />
+        <Tag text={role} setTagElt={setTagElt} oneTag={tagElt} />
+        <Tag text={level} setTagElt={setTagElt} oneTag={tagElt} />
         {allLanguages}
         {allTools}
       </div>
@@ -70,6 +72,13 @@ Card.propTypes = {
   level: PropTypes.string.isRequired,
   languages: PropTypes.array.isRequired,
   tools: PropTypes.array.isRequired,
+  setTagElt: PropTypes.func,
+  tagElt: PropTypes.array,
+};
+
+Card.defaultProps = {
+  setTagElt: () => {},
+  tagElt: [],
 };
 
 export default Card;

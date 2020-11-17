@@ -1,0 +1,54 @@
+@use 'src/styles/vars';
+
+.see-tag-element {
+  background-color: white;
+  width: 90%;
+  margin: auto;
+  position: relative;
+  top: -5em;
+  left: 0;
+  right: 0;
+  padding: 1em 1em 0em;
+  border-radius: 3%;
+  box-shadow: 0px 3px 41px -23px rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__all {
+    width: 80%;
+  }
+  &__clear {
+    font-family: vars.$global-font;
+    color: vars.$color-dark-grayish-cyan;
+    font-weight: vars.$little-dark-weight;
+    width: 20%;
+  }
+}
+
+.arrow {
+  display: inline-flex;
+  align-items: stretch;
+  & p {
+    background-color: vars.$color-desaturated-dark-cyan;
+    border-bottom-right-radius: 10%;
+    border-top-right-radius: 10%;
+    right: 0;
+    color: white;
+    margin: 1em .4em 1em 0em;
+    display: flex;
+
+    & img {
+      margin: auto;
+      padding: 0em .8em;
+      width: 40px;
+    }
+  }
+}
+
+.search-bar-tag {
+  margin: 1em 0;
+}
+
+main {
+  position: relative;
+}

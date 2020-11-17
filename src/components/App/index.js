@@ -1,15 +1,16 @@
 // == Import npm
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../Header';
 import Card from '../Card';
 
 // == Import
 import './styles.scss';
-import data from '../../../data.js';
+import data from '../../../data';
+import SeeTagElement from '../SeeTagElement';
 
 // == Composant
 const App = () => {
-  console.log(data);
+  const [tagElt, setTagElt] = useState([]);
   const allData = data.map((elt) => (
     <Card
       key={elt.id}
@@ -25,12 +26,18 @@ const App = () => {
       level={elt.level}
       languages={elt.languages}
       tools={elt.tools}
+      setTagElt={setTagElt}
+      tagElt={tagElt}
     />
   ));
+
   return (
     <div className="app">
       <Header />
+
       <main>
+        {tagElt.length >= 1 ? <SeeTagElement tagElt={tagElt} setTagElt={setTagElt} /> : '' }
+
         {allData}
 
       </main>
