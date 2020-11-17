@@ -1,0 +1,90 @@
+@use 'src/styles/vars';
+
+.card {
+  background-color: white;
+  width: 90%;
+  margin: 3em auto;
+  padding: 1.5em 1.5em 1em;
+  border-radius: 3%;
+  box-shadow: 0px 3px 41px -23px rgba(0,0,0,0.75);
+  font-family: vars.$global-font;
+  &__details {
+    border-bottom: 1px solid vars.$color-dark-grayish-cyan;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    position: relative;
+    &--logo {
+      position: absolute;
+      width: 18%;
+      top: -3em;
+    }
+    &--company {
+      color: vars.$color-desaturated-dark-cyan;
+      font-weight: vars.$little-dark-weight;
+      display: inline;
+    }
+    &--new,  &--featured {
+      color: white;
+      border: none;
+      padding: .7em .8em .5em ;
+      border-radius: 20px;
+      text-transform: uppercase;
+      font-family: vars.$global-font;
+      font-size: 12px;
+      font-weight: vars.$little-dark-weight;
+    }
+
+    &--new {
+      background-color: vars.$color-desaturated-dark-cyan;
+      margin: 0em 1em;
+    }
+
+    &--featured {
+      background-color: black;
+    }
+
+    &--position {
+      font-weight: vars.$dark-weight;
+      margin: 1.5em 0em;
+      color: vars.$color-very-dark-grayish-cyan;
+    }
+
+    &--list {
+      display: flex;
+      margin-bottom: .5em;
+    }
+    &--list li:not(:last-of-type) {
+      margin-right: 2em;
+    }
+
+    &--list li:not(:first-of-type) {
+      list-style-type: disc;
+    
+    }
+
+    &--list li {
+      color: vars.$color-dark-grayish-cyan;
+      font-size: 15px;
+    }
+    
+  }
+
+  &__tag {
+    &--button {
+      background-color: vars.$color-light-grayish-cyan-tablet;
+      border: none;
+      color: vars.$color-desaturated-dark-cyan;
+      font-family: vars.$global-font;
+      padding: .8em;
+      border-radius: 5px;
+      font-weight: vars.$little-dark-weight;
+      font-size: vars.$global-size;
+      margin:0em 1em 1em 0em;
+    }
+  }
+}
+
+.active {
+  border-left: 7px solid vars.$color-desaturated-dark-cyan;
+}

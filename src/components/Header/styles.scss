@@ -1,0 +1,23 @@
+
+@use 'src/styles/vars';
+.header {
+  background-color: vars.$color-desaturated-dark-cyan;
+  &__background-mobile {
+    width: 100%;
+  }
+  &__background-desktop {
+    display: none;
+  }
+}
+
+@media only screen and (min-width : 1024px) {
+  .header {
+    &__background-mobile {
+      display: none;
+    }
+    &__background-desktop {
+      display: block;
+      width: 100%;
+    }
+  }
+}
