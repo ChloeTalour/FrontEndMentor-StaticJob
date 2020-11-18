@@ -3,11 +3,14 @@ import PropTypes from 'prop-types';
 import Remove from '../../assets/images/icon-remove.svg';
 import './styles.scss';
 
-const Arrow = ({ text, setTagElt, tagElt }) => {
+const Arrow = ({
+  text, setTagElt, tagElt, dataFromJobs, setNewData,
+}) => {
   const essai = (evt) => {
     const parentElt = evt.currentTarget.parentNode;
     const inputElt = parentElt.querySelector('input').value;
-    setTagElt(tagElt.filter((elt) => elt !== inputElt));
+    setTagElt(tagElt.filter((elt) => elt.value !== inputElt));
+    console.log(tagElt);
   };
   return (
     <div className="arrow">

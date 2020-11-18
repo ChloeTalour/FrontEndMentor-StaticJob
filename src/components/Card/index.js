@@ -29,6 +29,7 @@ const Card = ({
       oneTag={tagElt}
       newData={newData}
       setNewData={setNewData}
+      dataName="languages"
     />
   ));
   const toolsSort = tools.sort();
@@ -39,6 +40,7 @@ const Card = ({
       oneTag={tagElt}
       newData={newData}
       setNewData={setNewData}
+      dataName="tools"
     />
   ));
 
@@ -68,6 +70,7 @@ const Card = ({
           oneTag={tagElt}
           newData={newData}
           setNewData={setNewData}
+          dataName="role"
         />
         <Tag
           text={level}
@@ -75,6 +78,7 @@ const Card = ({
           oneTag={tagElt}
           newData={newData}
           setNewData={setNewData}
+          dataName="level"
         />
         {allLanguages}
         {allTools}

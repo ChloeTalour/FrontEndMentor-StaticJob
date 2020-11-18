@@ -42,7 +42,7 @@ const App = () => {
       <Header />
 
       <main>
-        {tagElt.length >= 1 ? <SeeTagElement tagElt={tagElt} setTagElt={setTagElt} /> : '' }
+        {tagElt.length >= 1 ? <SeeTagElement tagElt={tagElt} setTagElt={setTagElt} dataFromJobs={data} setNewData={setNewData} /> : '' }
 
         {allData}
 
